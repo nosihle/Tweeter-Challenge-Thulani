@@ -5,8 +5,8 @@ This program count the number of times each word has been used and the calculate
 This is a self contained program, written using a mac OS
 
 This is achieved through the two source files, tweeted_words.py and median_unique.py
-	added features:
 
+	Added features:
 ft3 = This feature shows the number of tweets that have been processed. In addition, more to the code writer, it shows how long the computation took. It will also show the most frequently used word. This can be used to determine what news of hash tags are trending. This can be done both at the tweet level, or the tweet batch. Both ways will be implemented.
 
 	Other considerations:
