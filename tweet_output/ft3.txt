@@ -1,1 +1,3 @@
-Number of tweets processed: 3
+Time (in seconds) to order and count words tweeted:   0.001409
+Time (seconds) to process words per tweet:   0.004145
+The number of tweets processed: 3

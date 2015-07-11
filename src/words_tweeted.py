@@ -16,9 +16,8 @@ start_timer = time.clock()
 
 
 #Read file input with Tweets after switching the directory to where the file exists
-os.chdir('/Users/Thulani/Desktop/InsightCode/tweet_input')
+os.chdir('/Users/Thulani/Desktop/Tweeter-Challenge-Thulani/tweet_input')
 tweets = open('tweets.txt', 'r')
-
 
 #Get one line from the file and split into iterable words
 
@@ -38,19 +37,23 @@ while True:
         break
 
 #Change directory to be able to output file in the right location
-os.chdir('/Users/Thulani/Desktop/InsightCode/tweet_output')
+os.chdir('/Users/Thulani/Desktop/Tweeter-Challenge-Thulani/tweet_output')
 ft1 = open('ft1.txt', 'w')
+ft3 = open('ft3.txt', 'w')
 
 #Do sorting at the end. Save sometime, such that I dont have to do the sorting so many times
 # Sort the counted words
 for word in sorted(wordcount):
-    ft1.write( "%s\t\t %s\n" % (word, wordcount[word]))
+    ft1.write( "%s\t\t %d\n" % (word, wordcount[word]))
+
+stop_timer = time.clock() - start_timer
+
+ft3.write( "Time (in seconds) to order and count words tweeted: %10.6f\n" % (stop_timer))
 
 #Close files after processes
 tweets.close()
 ft1.close()
-stop_timer = time.clock() - start_timer
 
-print(stop_timer)
+
 
 

@@ -17,14 +17,13 @@ start_timer = time.clock()
 # for reading a file. But for this feature, it easier to read the whole and then process, rather than breaking it down.
 
 
-#Read file input with Tweets after switching the directory to where the file exists
-os.chdir('/Users/Thulani/Desktop/InsightCode/tweet_input')
+#Read files for both reading and writing input with Tweets after switching the directory to where the file exists
+os.chdir('/Users/Thulani/Desktop/Tweeter-Challenge-Thulani/tweet_input')
 tweets = open('tweets.txt', 'r')
 
-#Get one line from the file and split into iterable words
-
-os.chdir('/Users/Thulani/Desktop/InsightCode/tweet_output')
+os.chdir('/Users/Thulani/Desktop/Tweeter-Challenge-Thulani/tweet_output')
 ft2 = open('ft2.txt', 'w')
+ft3 = open('ft3.txt', 'a')
 
 unique = []
 median = []
@@ -50,11 +49,15 @@ while True:
     except StopIteration:
         break
 
+stop_timer = time.clock() - start_timer
+
+# Write the number of tweets that have been processed, the time it took to run the median_unique.py
+ft3.write( "Time (seconds) to process words per tweet: %10.6f\n" % (stop_timer))
+ft3.write( "The number of tweets processed: %d\n" % (len(median)))
+
 #Close files after processes
 tweets.close()
 ft2.close()
-stop_timer = time.clock() - start_timer
-
-print(stop_timer)
+ft3.close()
 
 
